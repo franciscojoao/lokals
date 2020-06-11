@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lokals</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Oswald:400,700"> 
+    <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+  <body>
+
+  
+    
+  
+  <div class="site-wrap">
+
+    <div class=" row site-navbar mt-3 col-lg-8  ">
+      <div class="container py-1 ">
+        <nav class="navbar  navbar-expand-lg navbar-dark">
+          
+        
+          <div class="collapse navbar-collapse text-right" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item col-lg-5">
+                <a class="nav-link" href="index.html">Início</a>
+              </li>
+              <li class="nav-item col-lg-2">
+                <a class="nav-link" href="about.html">Acerca</a>
+              </li>
+              <li class="col-lg-3 nav-item  active">
+                <a class="nav-link" href="apartments.html">Alojamentos</a>
+              </li>
+              <li class="nav-item col-lg-2">
+                <a class="nav-link" href="contact.html">Contactos</a>
+              </li>
+              <li class="nav-item col-lg-12">
+                  <a class="nav-link" href="candidatura.html">Junte-se a nós</a>
+                </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    
+    </div>
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+    
+    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url('images/hero_bg_1.jpg');">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-7 text-center">
+          <h1 class="text-white">Alojamento Coimbra</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+      <div class="featured-property-half d-flex">
+        <div class="image" style="background-image: url('images/img_2.jpg')"></div>
+        <div class="text">
+
+          <h5>A partir de:</h5>
+          <h3>230€</h3>
+          <h5>por noite</h5>
+          <br>
+          <br>
+          
+          <input type="text" class="form-control form-control-sm" id="datepickercheckin" placeholder="Check-in" style="width: 50%; float: left;">
+          <label for="datepickercheckin" style="float: left;">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+          </label>
+          <input type="text" class="form-control form-control-sm" id="datepickercheckout" placeholder="Check-out" style="width: 50%; float: left;">
+          <label for="datepickercheckout" style="float: left;">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+          </label>
+
+          <select class="form-control form-control-sm numeroDePessoas" style="width: 64.5%;">
+            <option value="apartamento">Numero de pessoas</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+          </select>
+
+          <br>
+          <br>
+          
+          <p><a href="#" class="btn btn-primary px-4 py-3" data-toggle="modal" data-target="#pagamentoModal" style="width: 64.5%; border-radius: 0.2rem;" id="alugar">Alugar</a></p>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para pagamento -->
+    <div class="modal fade" id="pagamentoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Pagamento</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div style="width: 100%; float: left; padding-right: 10px;">
+              <p style="width: 20%; float: left; padding: 10px 0px 0px 10px;">Email</p>
+              <input type="text" class="form-control form-control-sm" placeholder="Email" style="width: 80%; float: left;">
+            </div>
+
+            <div style="width: 100%; height: 150px; padding: 20px 10px 20px 10px; float: left; text-align: center;">
+
+              <!-- botao do cartão -->
+              <div id="cartao-btn" class="div-pagamento" style="background-color: #ced4da;">
+                <h5 style="padding-top: 20px; line-height: 15px;">Cartão de</h5>
+                <h5 style="line-height: 15px; padding-bottom: 10px;">Crédito/Débito</h5>
+                <div class="form-check">
+                  <input class="form-check-input metodo-pagamento" type="radio" id="cartao" checked>
+                  <label class="form-check-label" for="cartao"></label>
+                  <img src="images/visa.jpg" alt="Cartão Visa" width="10%" height="10%" style="padding-bottom: 5px;">
+                  <img src="images/mastercard.jpg" alt="Cartão Visa" width="10%" height="10%" style="padding-bottom: 5px;">
+                </div>
+              </div>
+              <!-- Fim de botao de cartao -->
+
+              <!-- botao do paypal -->
+              <div id="paypal-btn"" class="div-pagamento">
+                <h5 style="padding-top: 35px; line-height: 15px;  padding-bottom: 18px;">Paypal</h5>
+                <div class="form-check">
+                  <input class="form-check-input metodo-pagamento" type="radio" id="paypal">
+                  <label class="form-check-label" for="paypal"></label>
+                  <img src="images/paypal.jpg" alt="Cartão Visa" width="12%" height="12%" style="padding-bottom: 5px;">
+                </div>
+              </div>
+              <!-- Fim do botao do paypal -->
+            </div>
+
+            <!-- Pagamento com cartao -->
+            <div class="pagamento-cartao" style="width: 50%; float: left; padding: 0px 10px 0px 10px;">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Primeiro nome</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Primeiro nome">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Número do cartão</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Número do cartão">
+              </div>
+              <div class="form-group">
+                <p style="line-height: 13px; padding-top: 7px;">País</p>
+                <select class="form-control form-control-sm" style="width: 100%;">
+                  <option>País</option>
+                  <option value="África do Sul">África do Sul</option>
+                  <option value="Albânia">Albânia</option>
+                  <option value="Alemanha">Alemanha</option>
+                  <option value="Andorra">Andorra</option>
+                  <option value="Angola">Angola</option>
+                  <option value="Anguilla">Anguilla</option>
+                  <option value="Antigua">Antigua</option>
+                  <option value="Arábia Saudita">Arábia Saudita</option>
+                  <option value="Argentina">Argentina</option>
+                  <option value="Armênia">Armênia</option>
+                  <option value="Aruba">Aruba</option>
+                  <option value="Austrália">Austrália</option>
+                  <option value="Áustria">Áustria</option>
+                  <option value="Azerbaijão">Azerbaijão</option>
+                  <option value="Bahamas">Bahamas</option>
+                  <option value="Bahrein">Bahrein</option>
+                  <option value="Bangladesh">Bangladesh</option>
+                  <option value="Barbados">Barbados</option>
+                  <option value="Bélgica">Bélgica</option>
+                  <option value="Benin">Benin</option>
+                  <option value="Bermudas">Bermudas</option>
+                  <option value="Botsuana">Botsuana</option>
+                  <option value="Brasil">Brasil</option>
+                  <option value="Brunei">Brunei</option>
+                  <option value="Bulgária">Bulgária</option>
+                  <option value="Burkina Fasso">Burkina Fasso</option>
+                  <option value="botão">botão</option>
+                  <option value="Cabo Verde">Cabo Verde</option>
+                  <option value="Camarões">Camarões</option>
+                  <option value="Camboja">Camboja</option>
+                  <option value="Canadá">Canadá</option>
+                  <option value="Cazaquistão">Cazaquistão</option>
+                  <option value="Chade">Chade</option>
+                  <option value="Chile">Chile</option>
+                  <option value="China">China</option>
+                  <option value="Cidade do Vaticano">Cidade do Vaticano</option>
+                  <option value="Colômbia">Colômbia</option>
+                  <option value="Congo">Congo</option>
+                  <option value="Coréia do Sul">Coréia do Sul</option>
+                  <option value="Costa do Marfim">Costa do Marfim</option>
+                  <option value="Costa Rica">Costa Rica</option>
+                  <option value="Croácia">Croácia</option>
+                  <option value="Dinamarca">Dinamarca</option>
+                  <option value="Djibuti">Djibuti</option>
+                  <option value="Dominica">Dominica</option>
+                  <option value="EUA">EUA</option>
+                  <option value="Egito">Egito</option>
+                  <option value="El Salvador">El Salvador</option>
+                  <option value="Emirados Árabes">Emirados Árabes</option>
+                  <option value="Equador">Equador</option>
+                  <option value="Eritréia">Eritréia</option>
+                  <option value="Escócia">Escócia</option>
+                  <option value="Eslováquia">Eslováquia</option>
+                  <option value="Eslovênia">Eslovênia</option>
+                  <option value="Espanha">Espanha</option>
+                  <option value="Estônia">Estônia</option>
+                  <option value="Etiópia">Etiópia</option>
+                  <option value="Fiji">Fiji</option>
+                  <option value="Filipinas">Filipinas</option>
+                  <option value="Finlândia">Finlândia</option>
+                  <option value="França">França</option>
+                  <option value="Gabão">Gabão</option>
+                  <option value="Gâmbia">Gâmbia</option>
+                  <option value="Gana">Gana</option>
+                  <option value="Geórgia">Geórgia</option>
+                  <option value="Gibraltar">Gibraltar</option>
+                  <option value="Granada">Granada</option>
+                  <option value="Grécia">Grécia</option>
+                  <option value="Guadalupe">Guadalupe</option>
+                  <option value="Guam">Guam</option>
+                  <option value="Guatemala">Guatemala</option>
+                  <option value="Guiana">Guiana</option>
+                  <option value="Guiana Francesa">Guiana Francesa</option>
+                  <option value="Guiné-bissau">Guiné-bissau</option>
+                  <option value="Haiti">Haiti</option>
+                  <option value="Holanda">Holanda</option>
+                  <option value="Honduras">Honduras</option>
+                  <option value="Hong Kong">Hong Kong</option>
+                  <option value="Hungria">Hungria</option>
+                  <option value="Iêmen">Iêmen</option>
+                  <option value="Ilhas Cayman">Ilhas Cayman</option>
+                  <option value="Ilhas Cook">Ilhas Cook</option>
+                  <option value="Ilhas Curaçao">Ilhas Curaçao</option>
+                  <option value="Ilhas Marshall">Ilhas Marshall</option>
+                  <option value="Ilhas Turks & Caicos">Ilhas Turks & Caicos</option>
+                  <option value="Ilhas Virgens (brit.)">Ilhas Virgens (brit.)</option>
+                  <option value="Ilhas Virgens(amer.)">Ilhas Virgens(amer.)</option>
+                  <option value="Ilhas Wallis e Futuna">Ilhas Wallis e Futuna</option>
+                  <option value="Índia">Índia</option>
+                  <option value="Indonésia">Indonésia</option>
+                  <option value="Inglaterra">Inglaterra</option>
+                  <option value="Irlanda">Irlanda</option>
+                  <option value="Islândia">Islândia</option>
+                  <option value="Israel">Israel</option>
+                  <option value="Itália">Itália</option>
+                  <option value="Jamaica">Jamaica</option>
+                  <option value="Japão">Japão</option>
+                  <option value="Jordânia">Jordânia</option>
+                  <option value="Kuwait">Kuwait</option>
+                  <option value="Latvia">Latvia</option>
+                  <option value="Líbano">Líbano</option>
+                  <option value="Liechtenstein">Liechtenstein</option>
+                  <option value="Lituânia">Lituânia</option>
+                  <option value="Luxemburgo">Luxemburgo</option>
+                  <option value="Macau">Macau</option>
+                  <option value="Macedônia">Macedônia</option>
+                  <option value="Madagascar">Madagascar</option>
+                  <option value="Malásia">Malásia</option>
+                  <option value="Malaui">Malaui</option>
+                  <option value="Mali">Mali</option>
+                  <option value="Malta">Malta</option>
+                  <option value="Marrocos">Marrocos</option>
+                  <option value="Martinica">Martinica</option>
+                  <option value="Mauritânia">Mauritânia</option>
+                  <option value="Mauritius">Mauritius</option>
+                  <option value="México">México</option>
+                  <option value="Moldova">Moldova</option>
+                  <option value="Mônaco">Mônaco</option>
+                  <option value="Montserrat">Montserrat</option>
+                  <option value="Nepal">Nepal</option>
+                  <option value="Nicarágua">Nicarágua</option>
+                  <option value="Niger">Niger</option>
+                  <option value="Nigéria">Nigéria</option>
+                  <option value="Noruega">Noruega</option>
+                  <option value="Nova Caledônia">Nova Caledônia</option>
+                  <option value="Nova Zelândia">Nova Zelândia</option>
+                  <option value="Omã">Omã</option>
+                  <option value="Palau">Palau</option>
+                  <option value="Panamá">Panamá</option>
+                  <option value="Papua-nova Guiné">Papua-nova Guiné</option>
+                  <option value="Paquistão">Paquistão</option>
+                  <option value="Peru">Peru</option>
+                  <option value="Polinésia Francesa">Polinésia Francesa</option>
+                  <option value="Polônia">Polônia</option>
+                  <option value="Porto Rico">Porto Rico</option>
+                  <option value="Portugal">Portugal</option>
+                  <option value="Qatar">Qatar</option>
+                  <option value="Quênia">Quênia</option>
+                  <option value="Rep. Dominicana">Rep. Dominicana</option>
+                  <option value="Rep. Tcheca">Rep. Tcheca</option>
+                  <option value="Reunion">Reunion</option>
+                  <option value="Romênia">Romênia</option>
+                  <option value="Ruanda">Ruanda</option>
+                  <option value="Rússia">Rússia</option>
+                  <option value="Saipan">Saipan</option>
+                  <option value="Samoa Americana">Samoa Americana</option>
+                  <option value="Senegal">Senegal</option>
+                  <option value="Serra Leone">Serra Leone</option>
+                  <option value="Seychelles">Seychelles</option>
+                  <option value="Singapura">Singapura</option>
+                  <option value="Síria">Síria</option>
+                  <option value="Sri Lanka">Sri Lanka</option>
+                  <option value="St. Kitts & Nevis">St. Kitts & Nevis</option>
+                  <option value="St. Lúcia">St. Lúcia</option>
+                  <option value="St. Vincent">St. Vincent</option>
+                  <option value="Sudão">Sudão</option>
+                  <option value="Suécia">Suécia</option>
+                  <option value="Suiça">Suiça</option>
+                  <option value="Suriname">Suriname</option>
+                  <option value="Tailândia">Tailândia</option>
+                  <option value="Taiwan">Taiwan</option>
+                  <option value="Tanzânia">Tanzânia</option>
+                  <option value="Togo">Togo</option>
+                  <option value="Trinidad & Tobago">Trinidad & Tobago</option>
+                  <option value="Tunísia">Tunísia</option>
+                  <option value="Turquia">Turquia</option>
+                  <option value="Ucrânia">Ucrânia</option>
+                  <option value="Uganda">Uganda</option>
+                  <option value="Uruguai">Uruguai</option>
+                  <option value="Venezuela">Venezuela</option>
+                  <option value="Vietnã">Vietnã</option>
+                  <option value="Zaire">Zaire</option>
+                  <option value="Zâmbia">Zâmbia</option>
+                  <option value="Zimbábue">Zimbábue</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <input type="radio" class="form-control" id="pagar-total" name="pagar" placeholder="Número do cartão" checked style="width: 10%; float: left;">
+                <label for="pagar-total" style="width: 90%; float: left; padding-top: 10px;">Pagar totalidade agora</label>
+              </div>
+            </div>
+
+            <div class="pagamento-cartao" style="width: 50%; float: left; padding: 0px 10px 0px 10px;">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Último nome</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Último nome">
+              </div>
+              <div class="form-group" style="width: 40%; float: left;">
+                <label for="exampleInputPassword1">Data de validade</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="MM/YY">
+              </div>
+              <div class="form-group" style="width: 40%; float: left; padding-left: 50px;">
+                <label for="exampleInputPassword1">CVV</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="CVV">
+              </div>
+              <div class="form-group" style="width: 100%; float: left;">
+                <label for="exampleInputPassword1">Código postal</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Código postal" style="width: 50%;">
+              </div>
+              <div class="form-group">
+                <input type="radio" class="form-control" id="pagar-parte" name="pagar" placeholder="Número do cartão" style="width: 10%; float: left;">
+                <label for="pagar-parte" style="width: 90%; float: left; padding-top: 10px;">Pagar 50% agora e o restante 2 dias antes do seu check-in</label>
+              </div>
+            </div>
+            <!-- Fim de pagamento com cartao -->
+
+
+            <!-- Pagamento por paypal -->
+            <div class="pagamento-paypal" style="width: 100%; float: left; padding: 0px 10px 0px 10px;">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email da conta PayPal</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+              </div>
+              <div class="form-group" style="width: 100%; float: left;">
+                <label for="exampleInputPassword1">Palavra-Passe</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Palavra-Passe">
+              </div>
+              <div style="width: 50%; float: left; height: 100px;">
+                <div class="form-group">
+                  <input type="radio" class="form-control" id="pagar-total-paypal" name="pagar-paypal" placeholder="Número do cartão" checked style="width: 10%; float: left;">
+                  <label for="pagar-total-paypal" style="width: 90%; float: left; padding-top: 10px;">Pagar totalidade agora</label>
+                </div>
+              </div>
+              <div style="width: 50%; float: left; height: 100px;">
+                <div class="form-group">
+                  <input type="radio" class="form-control" id="pagar-parte-paypal" name="pagar-paypal" placeholder="Número do cartão" style="width: 10%; float: left;">
+                  <label for="pagar-parte-paypal" style="width: 90%; float: left; padding-top: 10px;">Pagar 50% agora e o restante 2 dias antes do seu check-in</label>
+                </div>
+              </div>
+            </div>
+            <!-- Fim de pagamento com paypal -->
+          </div>
+
+          <hr style="height:2px; width: 90%; border-width:0; color:gray; background-color:gray">
+
+          <div style="width: 100%; float: left; padding: 20px 35px 0px 35px;">
+            <p style="width: 50%; float: left; font-size: larger;">Total</p>
+            <p style="width: 50%; float: right; font-size: larger;"><span style="float: right;">230€</span></p>
+          </div>
+
+          <div class="modal-footer" style="padding: 15px 15px 15px 15px; justify-content: center;">
+            <button data-toggle="modal" data-target="#myModal" type="submit" class="btn btn-primary" style="height: 60px; width:300px;">Confirmar</button>
+          </div>
+
+          <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Pagamento efetuado</h4>
+                </div>
+                <div class="modal-content">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+              </div>       
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fim de modal para pagamento -->
+    
+    <div class="site-section" style="padding-top: 50px;">
+      <div class="container">
+        <div class="row">
+          <div class="mb-5 w-border col-md-12 mx-auto">
+            <p style="line-height: 15px; float: left; width: 33%; font-size: larger;">Localização:
+              <span style="padding-left: 15px; padding-right: 15px; font-size: medium;">Coimbra</span>
+            </p>
+            <p style="line-height: 15px; float: left; width: 33%; font-size: larger;">Acomoda:
+              <span style="padding-left: 15px; font-size: medium">8 Pessoas</span>
+            </p>
+            <p style="line-height: 15px; float: left; width: 33%; font-size: larger;">Tamanho:
+              <span style="padding-left: 15px; font-size: medium">60m<sup>2</sup></span>
+            </p>
+          </div>
+        </div>
+
+        <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+        <div class="row" style="padding-top: 50px;">
+          <div class="mb-5 w-border col-md-12 mx-auto">
+            <div style="width: 20%; line-height: 30px; float: left; font-size: larger; float: left;">
+              <p>Descrição:</p>
+            </div>
+            <div style="width: 70%; font-size: medium; line-height: 30px; float: left;">
+              <span>Lorem ipsum dolor sit amet, 
+                consectetur adipisicing elit. Eveniet, fugit nam obcaecati fuga itaque deserunt officia, error reiciendis ab quod?</span>
+            </div>
+          </div>
+        </div>
+
+        <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+        <div class="row" style="padding-top: 50px;">
+          <div class="mb-5 w-border col-md-12 mx-auto">
+            <div style="width: 20%; line-height: 30px; float: left; font-size: larger; float: left;">
+              <p>Amenidades:</p>
+            </div>
+            <div style="width: 70%; font-size: xx-large; line-height: 30px; float: left;">
+              <div style="float: left; text-align: center; width: 150px;">
+                <i class="fa fa-wifi" aria-hidden="true"></i>
+                <p style="font-size: medium; line-height: 15px;">Wifi</p>
+              </div>
+              <div style="float: left; text-align: center; width: 150px;">
+                <i class="fa fa-television" aria-hidden="true"></i>
+                <p style="font-size: medium; line-height: 15px;">Televisão</p>
+              </div>
+              <div style="float: left; text-align: center; width: 150px;">
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <p style="font-size: medium; line-height: 15px;">Chuveiro</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+        <div class="row" style="padding-top: 50px;">
+          <div class="mb-5 w-border col-md-12 mx-auto">
+            <div style="width: 20%; line-height: 30px; float: left; font-size: larger; float: left;">
+              <p>Check-in e check-out:</p>
+            </div>
+            <div style="font-size: medium; line-height: 30px; float: left; padding-left: 50px;">
+              <p>Check-in:<span style="padding-left: 27px;">9:00</span></p>
+              <p>Check-out:<span style="padding-left: 18px;">20:00</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    
+    
+    <div class="bg-primary">
+      <div class="container">
+        <div class="row">
+          <a href="#" class="col-2 text-center py-4 social-icon d-block"><i class="fa fa-facebook" aria-hidden="true" style="color: white"></i></a>
+          <a href="#" class="col-2 text-center py-4 social-icon d-block"><i class="fa fa-twitter" aria-hidden="true" style="color: white"></i></a>
+          <a href="#" class="col-2 text-center py-4 social-icon d-block"><i class="fa fa-instagram" aria-hidden="true" style="color: white"></i></a>
+          <a href="#" class="col-2 text-center py-4 social-icon d-block"><i class="fa fa-linkedin" aria-hidden="true" style="color: white"></i></a>
+          <a href="#" class="col-2 text-center py-4 social-icon d-block"><i class="fa fa-pinterest-p" aria-hidden="true" style="color: white"></i></a>
+          <a href="#" class="col-2 text-center py-4 social-icon d-block"><i class="fa fa-youtube" aria-hidden="true" style="color: white"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="mb-5">
+              <h3 class="footer-heading mb-4">About Apart</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
+            </div>
+            <div class="mb-5">
+              <h3 class="footer-heading mb-4">Subscribe</h3>
+              <form action="#" method="post" class="site-block-subscribe">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control border-secondary bg-transparent" placeholder="Enter your email"
+                    aria-label="Enter Email" aria-describedby="button-addon2">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary rounded-top-right-0" type="button" id="button-addon2">Subscribe</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <div class="row mb-5">
+              <div class="col-md-12">
+                <h3 class="footer-heading mb-4">Navigations</h3>
+              </div>
+              <div class="col-md-6 col-lg-6">
+                <ul class="list-unstyled">
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Apartments</a></li>
+                  <li><a href="#">Featured Apartment</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6 col-lg-6">
+                <ul class="list-unstyled">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="#">Membership</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <h3 class="footer-heading mb-4">Follow Us</h3>
+
+                <div>
+                  <a href="#" class="pl-0 pr-3"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                  <a href="#" class="pl-3 pr-3"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                  <a href="#" class="pl-3 pr-3"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                  <a href="#" class="pl-3 pr-3"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+  <script src="js/main.js"></script>
+  </body>
+</html>
